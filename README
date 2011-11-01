@@ -1,0 +1,30 @@
+Rdio Web Playback jQuery plugin, version 0.1
+
+This is a pretty simple plugin to provide a jQuery interface to Rdio's
+Web Playback API <http://developer.rdio.com/docs/read/Web_Playback_API>
+
+It includes and uses SWFObject <http://code.google.com/p/swfobject/> to
+make hide much of the complexity of cross-browser Flash embedding.
+
+To use jquery.rdio.js in your web app include jQuery and either
+jquery.rdio.min.js or jquery.rdio.js in your HTML. Add a placeholder <div>
+that the API swf will be embedded in.
+
+Call $('#placeholder').rdio('playbackToken') to embed the swf. Then call
+$('#placeholder').rdio().method() to call playback API methods. They're
+exactly the same as are documented in the playback API docs but without
+the "rdio_" prefix. For example $('#placeholder').rdio().play('a171827');
+
+Callbacks are exposed as jQuery events in the 'rdio' namespace that are
+triggered on the placeholder element. So to get called when the API is
+ready use: $('#placeholder').bind('ready.rdio', function(e) { ... });
+Callback arguments are mapped to jQuery event handler arguments like:
+$('#placeholder').bind('playStateChanged', function (e, playState) { ... });
+
+There's an example for all fo this in the example/ directory.
+
+To use this plugin you'll need to get a playbackToken through the Rdio
+Web Service API: http://developer.rdio.com/docs/read/rest/Methods#getPlaybackToken
+
+jquery.rdio.js and swfobject.js are MIT licensed:
+  http://www.opensource.org/licenses/mit-license.php
