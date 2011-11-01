@@ -813,7 +813,6 @@ var swfobject = function() {
 
     // get SWFObject to embed the playback SWF
     var flashvars = {
-      'enableLoging': 'true',
       'playbackToken': playbackToken,
       'domain': document.domain,
       'listener': listener_name
