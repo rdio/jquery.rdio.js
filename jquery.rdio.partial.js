@@ -19,7 +19,7 @@
     var listener_name = id + '_cb';
     // build a listener that turns callbacks into jQuery events
     var listener = {};
-    listener.ready = function() { container.trigger('ready.rdio')};
+    listener.ready = function(userInfo) { container.trigger('ready.rdio', [userInfo])};
     listener.playStateChanged = function(playState) { container.trigger('playStateChanged.rdio', [playState])};
     listener.playingTrackChanged = function(playingTrack, sourcePosition) { container.trigger('playingTrackChanged.rdio', [playingTrack, sourcePosition])};
     listener.playingSourceChanged = function(playingSource) { container.trigger('playingSourceChanged.rdio', [playingSource])};
@@ -31,6 +31,7 @@
     listener.repeatChanged = function(repeat) { container.trigger('repeatChanged.rdio', [repeat])};
     listener.updateFrequencyData = function(frequencyData) { container.trigger('updateFrequencyData.rdio', [frequencyData])};
     listener.playingSomewhereElse = function() { container.trigger('playingSomewhereElse.rdio')};
+    listener.freeRemainingChanged = function(remaining) { container.trigger('freeRemainingChanged.rdio', [frequencyData])};
     window[listener_name] = listener;
 
     // get SWFObject to embed the playback SWF
