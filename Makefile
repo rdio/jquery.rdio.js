@@ -1,7 +1,7 @@
 # A Makefile for building various versions of jquery.rdio.js
 
 # where's the YUI compressor?
-YUICOMPRESSOR=~/rdio/rdio/config/yuicompressor-2.4.2.jar
+YUICOMPRESSOR=~/rdio/rdio/config/yuicompressor-2.4.6.jar
 
 # build the uncompressed and compressed versions
 all: jquery.rdio.js jquery.rdio.min.js
