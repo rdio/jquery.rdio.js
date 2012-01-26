@@ -776,9 +776,9 @@ var swfobject = function() {
 		}
 	};
 }();
-/*!	rdio.jquery v0.1 <http://developer.rdio.com/>
-	is released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
-	Copyright 2011 Rdio Inc.
+/*! rdio.jquery v0.1 <http://developer.rdio.com/>
+  is released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
+  Copyright 2011 Rdio Inc.
 */
 
 (function($) {
@@ -847,10 +847,11 @@ var swfobject = function() {
     // store it on the container element
     container.data('rdio', o);
 
-    // get the embed once this function has finished running
-    // it might not be there yet
-    setTimeout(function() {o.embed = $('#'+id).get(0);}, 1);
-    
+    // get the embed once the page has loaded
+    swfobject.addLoadEvent(function() {
+      o.embed = $('#'+id).get(0);
+    });
+
     return o;
   }
 
