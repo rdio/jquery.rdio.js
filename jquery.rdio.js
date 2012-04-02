@@ -820,10 +820,10 @@ var swfobject = function() {
     };
     var params = {'allowScriptAccess': 'always'};
     var attributes = {};
-    swfobject.embedSWF('http://www.rdio.com/api/swf/', id, 1, 1, '9.0.0', '', flashvars, params, attributes);
+    var o = {'embed': null};
+    swfobject.embedSWF('http://www.rdio.com/api/swf/', id, 1, 1, '9.0.0', '', flashvars, params, attributes, function(status) {o.embed = $('#'+id).get(0);});
 
     // build a wrapper object to dispatch method calls into the SWF
-    var o = {'embed': null};
     o.play = function(key, options) { this.embed.rdio_play(key, options); };
     o.pause = function() { this.embed.rdio_pause(); };
     o.stop = function() { this.embed.rdio_stop(); };
@@ -847,10 +847,6 @@ var swfobject = function() {
     // store it on the container element
     container.data('rdio', o);
 
-    // get the embed once this function has finished running
-    // it might not be there yet
-    setTimeout(function() {o.embed = $('#'+id).get(0);}, 1);
-    
     return o;
   }
 
