@@ -4,7 +4,7 @@ This is a pretty simple plugin to provide a jQuery interface to Rdio's
 Web Playback API <http://developer.rdio.com/docs/read/Web_Playback_API>
 
 It includes and uses SWFObject <http://code.google.com/p/swfobject/> to
-make hide much of the complexity of cross-browser Flash embedding.
+hide much of the complexity of cross-browser Flash embedding.
 
 To use jquery.rdio.js in your web app include jQuery and either
 jquery.rdio.min.js or jquery.rdio.js in your HTML. Add a placeholder <div>
@@ -21,7 +21,7 @@ ready use: $('#placeholder').bind('ready.rdio', function(e) { ... });
 Callback arguments are mapped to jQuery event handler arguments like:
 $('#placeholder').bind('playStateChanged', function (e, playState) { ... });
 
-There's an example for all fo this in the example/ directory.
+There's an example for all of this in the example/ directory.
 
 To use this plugin you'll need to get a playbackToken through the Rdio
 Web Service API: http://developer.rdio.com/docs/read/rest/Methods#getPlaybackToken
