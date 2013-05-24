@@ -1,6 +1,6 @@
 {
-  "name": "rdio",
-  "version": "0.1.0",
+  "name": "jquery.rdio",
+  "version": "0.1.1",
   "main": "jquery.rdio.js",
   "ignore": [
     "**/.*",
